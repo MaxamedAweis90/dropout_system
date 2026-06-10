@@ -1,0 +1,20 @@
+# Node
+node_modules/
+.next/
+out/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Env files
+.env
+.env.local
+
+# Artifacts
+backend/app/ml/artifacts/

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "student-dropout-backend"
+version = "0.1.0"
+description = "FastAPI backend for student dropout prediction"
+readme = "../README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.30.0",
+  "pydantic>=2.8.0",
+  "pydantic-settings>=2.3.0",
+  "sqlalchemy>=2.0.30",
+  "pymysql>=1.1.1",
+  "python-multipart>=0.0.9",
+  "pandas>=2.2.2",
+  "scikit-learn>=1.5.0",
+  "joblib>=1.4.2",
+  "numpy>=1.26.4",
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+include = ["app*"]
