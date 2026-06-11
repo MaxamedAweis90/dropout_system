@@ -18,3 +18,8 @@ venv/
 
 # Artifacts
 backend/app/ml/artifacts/
+*.egg-info/
+backend/data/*.db
+
+# Copilot worktrees
+*.worktrees/
