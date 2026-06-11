@@ -452,7 +452,7 @@ export function AdministratorDashboard() {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100">
-                      {recentPredictions.map((student: any, index) => (
+                      {recentPredictions.map((student: any, index: number) => (
                         <tr key={`${student.id}-${index}`} className="hover:bg-slate-50/50">
                           <td className="px-6 py-3 font-semibold text-indigo-900">{student.id}</td>
                           <td className="px-6 py-3 font-semibold text-slate-900">{student.name}</td>

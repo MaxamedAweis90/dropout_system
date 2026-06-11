@@ -23,7 +23,7 @@ def read_student(student_id: str, db: Session = Depends(get_db)):
 
 @admin_router.put("/student/{student_id}", response_model=StudentResponse)
 def edit_student(student_id: str, payload: StudentResponse, db: Session = Depends(get_db)):
-    updates = payload.dict(exclude_unset=True)
+    updates = payload.model_dump(exclude_unset=True)
     student = update_student(db, student_id, updates)
     if not student:
         raise HTTPException(status_code=404, detail="Student not found")

@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     )
     cors_origins_raw: str = Field(default="http://localhost:3000", alias="BACKEND_CORS_ORIGINS")
     model_path: str = Field(default="backend/app/ml/artifacts/dropout_model.joblib", alias="MODEL_PATH")
+    jwt_secret: str = Field(default="change-me-secret-in-production", alias="JWT_SECRET")
 
     @property
     def cors_origins(self) -> List[str]:

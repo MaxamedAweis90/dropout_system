@@ -9,6 +9,7 @@ class StudentRecord(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     student_id: Mapped[str | None] = mapped_column(String(50), unique=True, nullable=True, index=True)
+    name: Mapped[str | None] = mapped_column(String(120), nullable=True)
     program: Mapped[str | None] = mapped_column(String(120), nullable=True)
     age: Mapped[int] = mapped_column(Integer, nullable=False)
     attendance_rate: Mapped[float] = mapped_column(Float, nullable=False)

@@ -1,7 +1,13 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
-import { Plus, Edit, Trash2, X, Search, CheckCircle, XCircle } from "lucide-react";
+import Plus from "lucide-react/dist/esm/icons/plus";
+import Edit from "lucide-react/dist/esm/icons/edit";
+import Trash2 from "lucide-react/dist/esm/icons/trash-2";
+import X from "lucide-react/dist/esm/icons/x";
+import Search from "lucide-react/dist/esm/icons/search";
+import CheckCircle from "lucide-react/dist/esm/icons/check-circle";
+import XCircle from "lucide-react/dist/esm/icons/x-circle";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Dean {

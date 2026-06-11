@@ -1,13 +1,19 @@
-import bcrypt
-from passlib.context import CryptContext
+import hashlib
+import secrets
 
-# Password hashing configuration
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def hash_password(password: str) -> str:
-    """Hash a plaintext password using bcrypt."""
-    return pwd_context.hash(password)
+    """Hash a plaintext password using SHA-256 with salt."""
+    salt = secrets.token_hex(16)
+    digest = hashlib.sha256(f"{salt}:{password}".encode("utf-8")).hexdigest()
+    return f"{salt}${digest}"
+
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """Verify a plaintext password against its hash."""
-    return pwd_context.verify(plain_password, hashed_password)
+    try:
+        salt, digest = hashed_password.split("$", 1)
+    except ValueError:
+        return False
+    expected = hashlib.sha256(f"{salt}:{plain_password}".encode("utf-8")).hexdigest()
+    return secrets.compare_digest(expected, digest)

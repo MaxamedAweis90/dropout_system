@@ -8,7 +8,8 @@ CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
-    role ENUM('Administrator', 'Dean', 'Head of Department', 'Teacher') NOT NULL,
+    role ENUM('Admin', 'Dean', 'Head of Department', 'Teacher', 'Clerk', 'Counselor') NOT NULL,
+    status ENUM('Active', 'Inactive') DEFAULT 'Active',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
@@ -52,13 +53,18 @@ CREATE TABLE classes (
 
 -- 6. Table: student_records (Core student demographic & academic data)
 CREATE TABLE student_records (
-    student_id VARCHAR(20) PRIMARY KEY,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    gpa DECIMAL(3,2) NOT NULL,
-    attendance_rate DECIMAL(5,2) NOT NULL,
-    financial_status ENUM('Stable', 'Unstable') NOT NULL,
-    dropout_flag TINYINT(1) DEFAULT 0,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id VARCHAR(50) UNIQUE,
+    name VARCHAR(120),
+    program VARCHAR(120),
+    age INT NOT NULL,
+    attendance_rate FLOAT NOT NULL,
+    gpa FLOAT NOT NULL,
+    credits_passed INT NOT NULL,
+    financial_strain_score FLOAT NOT NULL,
+    study_hours_per_week FLOAT NOT NULL,
+    has_scholarship BOOLEAN DEFAULT FALSE,
+    first_generation_student BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
@@ -93,4 +99,15 @@ CREATE TABLE data_imports (
     row_count INT DEFAULT 0,
     imported_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (imported_by) REFERENCES users(id) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+-- 10. Table: prediction_history (ML prediction results)
+CREATE TABLE prediction_history (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id VARCHAR(50) NULL,
+    dropout_probability FLOAT NOT NULL,
+    risk_level VARCHAR(20) NOT NULL,
+    recommendation VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_student_id (student_id)
 ) ENGINE=InnoDB;
