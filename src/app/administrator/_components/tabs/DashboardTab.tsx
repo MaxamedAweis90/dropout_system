@@ -420,12 +420,12 @@ export default function DashboardTab({
                     return (
                       <tr key={idx} className="hover:bg-slate-50/30">
                         <td className="px-5 py-3.5 font-bold text-indigo-900/80">
-                          <Link href={`/administrator/students/${s.student_id}`} className="hover:text-indigo-650 transition">
+                          <Link href={`/administrator/students/${s.student_id}` as any} className="hover:text-indigo-650 transition">
                             {s.student_id}
                           </Link>
                         </td>
                         <td className="px-5 py-3.5 font-bold text-slate-900">
-                          <Link href={`/administrator/students/${s.student_id}`} className="hover:text-indigo-650 transition">
+                          <Link href={`/administrator/students/${s.student_id}` as any} className="hover:text-indigo-650 transition">
                             {s.name}
                           </Link>
                         </td>
@@ -449,7 +449,7 @@ export default function DashboardTab({
                         </td>
                         <td className="px-5 py-3.5 text-center">
                           <Link
-                            href={`/administrator/students/${s.student_id}`}
+                            href={`/administrator/students/${s.student_id}` as any}
                             className="p-1.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-500 hover:text-indigo-600 hover:bg-slate-100 transition inline-block cursor-pointer"
                             title="View Student Details"
                           >

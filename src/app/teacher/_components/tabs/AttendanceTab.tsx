@@ -257,7 +257,7 @@ export default function AttendanceTab({
                   <td 
                     className="px-6 py-4 font-semibold text-indigo-900 sticky left-0 bg-white group-hover:bg-slate-50/90 z-20 border-r border-slate-200 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.15)]"
                   >
-                    <Link href={`/teacher/students/${s.student_id}`} className="hover:text-indigo-650 transition">
+                    <Link href={`/teacher/students/${s.student_id}` as any} className="hover:text-indigo-650 transition">
                       {s.student_id}
                     </Link>
                   </td>
@@ -265,7 +265,7 @@ export default function AttendanceTab({
                   <td 
                     className="px-6 py-4 font-bold text-slate-900 sticky left-[120px] bg-white group-hover:bg-slate-50/90 z-20 border-r border-slate-200 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.15)]"
                   >
-                    <Link href={`/teacher/students/${s.student_id}`} className="hover:text-indigo-650 transition">
+                    <Link href={`/teacher/students/${s.student_id}` as any} className="hover:text-indigo-650 transition">
                       {s.name}
                     </Link>
                   </td>

@@ -214,13 +214,13 @@ export default function RiskTab({
                 return (
                   <tr key={student.student_id} className="hover:bg-slate-50/50">
                     <td className="px-6 py-4 font-bold text-indigo-900">
-                      <Link href={`/administrator/students/${student.student_id}`} className="hover:text-indigo-650 transition">
+                      <Link href={`/administrator/students/${student.student_id}` as any} className="hover:text-indigo-650 transition">
                         {student.student_id}
                       </Link>
                     </td>
                     <td className="px-6 py-4">
                       <div className="font-bold text-slate-900">
-                        <Link href={`/administrator/students/${student.student_id}`} className="hover:text-indigo-650 transition">
+                        <Link href={`/administrator/students/${student.student_id}` as any} className="hover:text-indigo-650 transition">
                           {student.name}
                         </Link>
                       </div>

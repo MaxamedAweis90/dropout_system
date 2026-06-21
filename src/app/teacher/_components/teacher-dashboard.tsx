@@ -269,7 +269,7 @@ export function TeacherDashboard() {
     setGradesState(prev => append ? { ...prev, ...newGrades } : newGrades);
   }, []);
 
-  const loadStudentsForClass = useCallback(async (classId: number, page: number, search: string, append = false) => {
+  const loadStudentsForClass = useCallback(async (classId: number, page: number = 0, search: string = "", append = false) => {
     if (page === 0) {
       setLoading(true);
     } else {
@@ -516,7 +516,7 @@ export function TeacherDashboard() {
                       <button
                         key={std.student_id}
                         onClick={() => {
-                          router.push(`/teacher/students/${std.student_id}`);
+                          router.push(`/teacher/students/${std.student_id}` as any);
                           setShowGlobalDropdown(false);
                         }}
                         className="w-full text-left px-3 py-2 hover:bg-indigo-50/50 rounded-xl transition flex items-center justify-between text-xs cursor-pointer group"

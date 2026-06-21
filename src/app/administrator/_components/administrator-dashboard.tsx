@@ -116,6 +116,9 @@ interface Student {
   cgpa: number;
   financial_problem: boolean;
   semester_year: number;
+  department_name?: string;
+  stress_index?: number;
+  parent_education?: string;
 }
 
 interface PredictionResult {
@@ -190,7 +193,7 @@ export function AdministratorDashboard() {
 
   const [showStudentModal, setShowStudentModal] = useState(false);
   const [studentEditMode, setStudentEditMode] = useState(false);
-  const [currentStudent, setCurrentStudent] = useState<any>({
+  const [currentStudent, setCurrentStudent] = useState<Student>({
     student_id: "",
     name: "",
     age: 20,
@@ -1482,7 +1485,7 @@ export function AdministratorDashboard() {
                             <button
                               key={std.student_id}
                               onClick={() => {
-                                router.push(`/administrator/students/${std.student_id}`);
+                                router.push(`/administrator/students/${std.student_id}` as any);
                                 setShowGlobalDropdown(false);
                               }}
                               className="w-full text-left px-3 py-2 hover:bg-indigo-50/50 rounded-xl transition flex items-center justify-between text-xs cursor-pointer group animate-pulse-none"
@@ -1716,7 +1719,6 @@ export function AdministratorDashboard() {
                 setCurrentClass={setCurrentClass}
                 setShowClassModal={handleShowClassModal}
                 handleDeleteClass={handleDeleteClass}
-                loading={loading}
               />
             )}
 

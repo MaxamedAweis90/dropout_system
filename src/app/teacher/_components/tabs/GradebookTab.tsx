@@ -153,12 +153,12 @@ export default function GradebookTab({
                 return (
                   <tr key={s.student_id} className="hover:bg-slate-50/50">
                     <td className="px-6 py-4 font-semibold text-indigo-900">
-                      <Link href={`/teacher/students/${s.student_id}`} className="hover:text-indigo-650 transition">
+                      <Link href={`/teacher/students/${s.student_id}` as any} className="hover:text-indigo-650 transition">
                         {s.student_id}
                       </Link>
                     </td>
                     <td className="px-6 py-4 font-bold text-slate-900">
-                      <Link href={`/teacher/students/${s.student_id}`} className="hover:text-indigo-650 transition">
+                      <Link href={`/teacher/students/${s.student_id}` as any} className="hover:text-indigo-650 transition">
                         {s.name}
                       </Link>
                     </td>
