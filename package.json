@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.10",
+    "@types/react-dropzone": "^4.2.2",
     "chart.js": "^4.4.3",
     "framer-motion": "^12",
     "lucide-react": "^0.511",
@@ -16,7 +18,9 @@
     "react": "19.2.4",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "19.2.4",
-    "react-hot-toast": "^2.5"
+    "react-dropzone": "^15.0.0",
+    "react-hot-toast": "^2.5",
+    "@supabase/supabase-js": "^2.43.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -1,0 +1,6 @@
+=== ML Artifacts Diagnostics (v2) ===
+Model type: RandomForestClassifier
+Model n_features_in_: 25
+Scaler type: StandardScaler
+Scaler features (11): ['Age', 'Study_Hours_per_Day', 'Attendance_Rate', 'Assignment_Delay_Days', 'Travel_Time_Minutes', 'GPA', 'Semester_GPA', 'CGPA', 'Family_Income', 'GPA_Attendance_Interaction', 'CGPA_Attendance_Interaction']
+Expected features (25): ['Age', 'Gender', 'Family_Income', 'Internet_Access', 'Study_Hours_per_Day', 'Attendance_Rate', 'Assignment_Delay_Days', 'Travel_Time_Minutes', 'Part_Time_Job', 'Scholarship', 'GPA', 'Semester_GPA', 'CGPA', 'Financial_Problem', 'Semester_Year 1', 'Semester_Year 2', 'Semester_Year 3', 'Semester_Year 4', 'Department_Arts', 'Department_Business', 'Department_CS', 'Department_Engineering', 'Department_Science', 'GPA_Attendance_Interaction', 'CGPA_Attendance_Interaction']

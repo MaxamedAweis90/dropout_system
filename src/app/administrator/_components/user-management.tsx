@@ -7,20 +7,21 @@ export default function UserManagement() {
   const [users, setUsers] = useState<Array<{ id: string; name: string; email: string }>>([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchUsers = () => {
+  const fetchUsers = async () => {
     setLoading(true);
     // Placeholder: replace with actual API call
-    setTimeout(() => {
-      setUsers([
-        { id: "U001", name: "Admin User", email: "admin@example.com" },
-        { id: "U002", name: "John Doe", email: "john.doe@example.com" },
-      ]);
-      setLoading(false);
-    }, 500);
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    setUsers([
+      { id: "U001", name: "Admin User", email: "admin@example.com" },
+      { id: "U002", name: "John Doe", email: "john.doe@example.com" },
+    ]);
+    setLoading(false);
   };
 
   useEffect(() => {
-    fetchUsers();
+    (async () => {
+      await fetchUsers();
+    })();
   }, []);
 
   const handleAddUser = () => {

@@ -1,0 +1,52 @@
+{
+    "model_type": "RandomForestClassifier",
+    "framework": "sklearn",
+    "features": [
+        "Age",
+        "Gender",
+        "Family_Income",
+        "Internet_Access",
+        "Study_Hours_per_Day",
+        "Attendance_Rate",
+        "Assignment_Delay_Days",
+        "Travel_Time_Minutes",
+        "Part_Time_Job",
+        "Scholarship",
+        "Stress_Index",
+        "GPA",
+        "Semester_GPA",
+        "CGPA",
+        "Financial_Problem",
+        "GPA_Attendance_Interaction",
+        "CGPA_Attendance_Interaction",
+        "Semester_Year 1",
+        "Semester_Year 2",
+        "Semester_Year 3",
+        "Semester_Year 4",
+        "Department_Arts",
+        "Department_Business",
+        "Department_CS",
+        "Department_Engineering",
+        "Department_Science",
+        "Parent_Bachelor",
+        "Parent_High School",
+        "Parent_Master",
+        "Parent_PhD"
+    ],
+    "target": "Dropout",
+    "class_mapping": {
+        "0": "Stayed",
+        "1": "Dropped Out"
+    },
+    "risk_thresholds": {
+        "Safe": "< 0.5",
+        "At-Risk": "0.5 - 0.7",
+        "High-Risk": "> 0.7"
+    },
+    "metrics": {
+        "accuracy": 0.785,
+        "roc_auc": 0.8101,
+        "recall_class_1": 0.62,
+        "precision_class_1": 0.54
+    }
+}
