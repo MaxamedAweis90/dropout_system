@@ -8,7 +8,7 @@ An AI-powered academic early-warning system designed to predict and prevent stud
 
 The project features a **decoupled, stateless ML microservice** architecture:
 
-```mermaid
+
 flowchart TD
     User([Educator / Admin]) -->|Interacts| FE[Next.js Frontend]
     FE -->|Auth & Database Operations| DB[(Supabase PostgreSQL)]
@@ -18,7 +18,6 @@ flowchart TD
     BE -->|Returns probability & risk tier| API
     API -->|Synchronizes prediction state| DB
     FE -->|Displays visual warnings| User
-```
 
 1. **Next.js Frontend:** A modern client interface built with Next.js 16 (App Router), React 19, Tailwind CSS v4, Framer Motion, and Lucide React.
 2. **Supabase Database & Auth:** Secure student and academic record state storage using PostgreSQL and Supabase JWT authentication.
@@ -107,8 +106,7 @@ From the root folder in a new terminal window:
 npm install
 
 # Run the development server (runs on http://localhost:3000)
-npm run dev
-```
+npm run de
 
 ---
 
